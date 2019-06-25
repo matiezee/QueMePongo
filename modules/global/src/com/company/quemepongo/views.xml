@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="quemepongo_TipoPrenda" name="tipoPrenda-view" extends="_local">
+        <property name="categoria" view="_minimal"/>
+    </view>
+    <view entity="quemepongo_MaterialPorPrenda" name="materialPorPrenda-view" extends="_local">
+        <property name="tipoPrenda" view="_minimal"/>
+        <property name="material" view="_minimal"/>
+    </view>
+    <view entity="quemepongo_Guardarropa" name="guardarropa-view" extends="_local">
+        <property name="prendas" view="prenda-view"/>
+        <property name="sugerencias" view="_minimal">
+            <property name="prenda" view="_minimal">
+                <property name="nombre"/>
+                <property name="tipoDePrenda" view="_minimal">
+                    <property name="categoria" view="_minimal"/>
+                </property>
+            </property>
+        </property>
+    </view>
+    <view entity="quemepongo_Prenda" name="prenda-view" extends="_local">
+        <property name="tipoDePrenda" view="_minimal"/>
+        <property name="material" view="_minimal"/>
+    </view>
+    <view entity="quemepongo_Sugerencia" name="sugerencia-view" extends="_local">
+        <property name="prenda" view="prenda-view"/>
+    </view>
+    <view entity="quemepongo_Evento" name="evento-view" extends="_local">
+        <property name="guardarropa" view="_minimal">
+            <property name="sugerencias" view="_minimal">
+                <property name="prenda" view="_minimal">
+                    <property name="tipoDePrenda" view="_minimal">
+                        <property name="categoria" view="_minimal"/>
+                    </property>
+                </property>
+            </property>
+        </property>
+    </view>
+</views>

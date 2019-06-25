@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.quemepongo.web.screens.tipoprenda">
+    <data>
+        <instance id="tipoPrendaDc"
+                  class="com.company.quemepongo.entity.TipoPrenda"
+                  view="tipoPrenda-view">
+            <loader/>
+        </instance>
+        <collection id="categoriasDc" class="com.company.quemepongo.entity.Categoria" view="_minimal">
+            <loader id="categoriasLc">
+                <query>
+                    <![CDATA[select e from quemepongo_Categoria e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="tipoPrendaDc">
+            <column width="250px">
+                <textField id="nombreField" property="nombre"/>
+                <textField id="temperaturaField" property="temperatura"/>
+                <checkBox id="lluviaField" property="lluvia"/>
+                <checkBox id="vientoField" property="viento"/>
+                <checkBox id="solField" property="sol"/>
+                <lookupPickerField id="categoriaField" optionsContainer="categoriasDc" property="categoria">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                    </actions>
+                </lookupPickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,122 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="table"
+        messagesPack="com.company.quemepongo.web.screens.guardarropa">
+    <data>
+        <collection id="guardarropasDc"
+                    class="com.company.quemepongo.entity.Guardarropa"
+                    view="_local">
+            <loader id="guardarropasDl">
+                <query>
+                    <![CDATA[select e from quemepongo_Guardarropa e]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="guardarropaDc"
+                  class="com.company.quemepongo.entity.Guardarropa"
+                  view="guardarropa-view">
+            <loader/>
+            <collection id="prendasDc" property="prendas"/>
+            <collection id="sugerenciasDc" property="sugerencias"/>
+        </instance>
+    </data>
+    <actions>
+        <action id="save" icon="icons/ok.png" caption="mainMsg://actions.Ok" shortcut="CTRL-ENTER"/>
+        <action id="cancel" icon="icons/cancel.png" caption="mainMsg://actions.Cancel" description="Esc"/>
+    </actions>
+    <dialogMode height="600" width="800"/>
+    <layout>
+        <split id="split" height="100%" orientation="horizontal" reversePosition="true" width="100%" pos="55">
+            <vbox id="lookupBox" expand="table" height="100%" margin="false,true,false,false" spacing="true">
+                <filter id="filter" applyTo="table" dataLoader="guardarropasDl">
+                    <properties include=".*"/>
+                </filter>
+                <groupTable id="table"
+                            width="100%"
+                            dataContainer="guardarropasDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="nombre"/>
+                    </columns>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="table.create"/>
+                        <button id="editBtn" action="table.edit"/>
+                        <button id="removeBtn" action="table.remove"/>
+                    </buttonsPanel>
+                </groupTable>
+                <hbox id="lookupActions" spacing="true" visible="false">
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
+            </vbox>
+            <vbox id="editBox" height="100%" margin="false,false,false,true" expand="tabSheetBox" spacing="true">
+                <vbox id="tabSheetBox">
+                    <tabSheet id="tabSheet" height="100%">
+                        <tab id="mainTab" caption="msg://mainTab" margin="true">
+                            <scrollBox id="fieldGroupBox"
+                                       height="100%">
+                                <form id="form" dataContainer="guardarropaDc">
+                                    <column width="250px">
+                                        <textField id="nombreField" property="nombre"/>
+                                    </column>
+                                </form>
+                            </scrollBox>
+                        </tab>
+                        <tab id='prendasTab' caption='msg://com.company.quemepongo.entity/Guardarropa.prendas'
+                             margin='true,false,false,false'>
+                            <table id="prendasTable" dataContainer="prendasDc" width="100%" height="100%">
+                                <actions>
+                                    <action id="create" type="create"/>
+                                    <action id="edit" type="edit"/>
+                                    <action id="remove" type="remove"/>
+                                </actions>
+                                <columns>
+                                    <column id="nombre"/>
+                                    <column id="tipoDePrenda"/>
+                                    <column id="material"/>
+                                    <column id="disponibilidad"/>
+                                    <column id="colorPrimario"/>
+                                    <column id="colorSecundario"/>
+                                </columns>
+                                <buttonsPanel>
+                                    <button action="prendasTable.create"/>
+                                    <button action="prendasTable.edit"/>
+                                    <button action="prendasTable.remove"/>
+                                </buttonsPanel>
+                            </table>
+                        </tab>
+                        <tab id='sugerenciasTab' caption='msg://com.company.quemepongo.entity/Guardarropa.sugerencias'
+                             margin='true,false,false,false'>
+                            <table id="sugerenciasTable" dataContainer="sugerenciasDc" width="100%" height="100%">
+                                <actions>
+                                    <action id="create" type="create"/>
+                                    <action id="edit" type="edit"/>
+                                    <action id="remove" type="remove"/>
+                                </actions>
+                                <columns>
+                                    <column id="id"/>
+                                    <column id="prenda"/>
+                                </columns>
+                                <buttonsPanel>
+                                    <button action="sugerenciasTable.create"/>
+                                    <button action="sugerenciasTable.edit"/>
+                                    <button action="sugerenciasTable.remove"/>
+                                </buttonsPanel>
+                            </table>
+                        </tab>
+                    </tabSheet>
+                </vbox>
+                <hbox id="actionsPane" spacing="true" visible="false">
+                    <button id="saveBtn" action="save"/>
+                    <button id="cancelBtn" action="cancel"/>
+                </hbox>
+            </vbox>
+        </split>
+    </layout>
+</window>

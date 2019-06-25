@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="eventoesTable"
+        messagesPack="com.company.quemepongo.web.screens.evento">
+    <data readOnly="true">
+        <collection id="eventoesDc"
+                    class="com.company.quemepongo.entity.Evento"
+                    view="_local">
+            <loader id="eventoesDl">
+                <query>
+                    <![CDATA[select e from quemepongo_Evento e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="eventoesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="eventoesTable"
+                dataLoader="eventoesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="eventoesTable"
+                    width="100%"
+                    dataContainer="eventoesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="nombre"/>
+                <column id="fecha"/>
+                <column id="ciudad"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="eventoesTable.create"/>
+                <button id="editBtn" action="eventoesTable.edit"/>
+                <button id="removeBtn" action="eventoesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

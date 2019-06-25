@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.quemepongo.web.screens.prenda">
+    <data>
+        <instance id="prendaDc"
+                  class="com.company.quemepongo.entity.Prenda"
+                  view="prenda-view">
+            <loader/>
+        </instance>
+        <collection id="tipoDePrendasDc" class="com.company.quemepongo.entity.TipoPrenda" view="_minimal">
+            <loader id="tipoDePrendasLc">
+                <query>
+                    <![CDATA[select e from quemepongo_TipoPrenda e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="materialsDc" class="com.company.quemepongo.entity.Material" view="_minimal">
+            <loader id="materialsLc">
+                <query>
+                    <![CDATA[select e from quemepongo_Material e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="prendaDc">
+            <column width="250px">
+                <textField id="nombreField" property="nombre"/>
+                <checkBox id="disponibilidadField" property="disponibilidad"/>
+                <lookupField id="tipoDePrendasDcField" optionsContainer="tipoDePrendasDc" property="tipoDePrenda"/>
+                <lookupField id="materiallField" optionsContainer="materialsDc" property="material"/>
+                <textField id="colorPrimarioField" property="colorPrimario"/>
+                <textField id="colorSecundarioField" property="colorSecundario"/>
+                <groupBox/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

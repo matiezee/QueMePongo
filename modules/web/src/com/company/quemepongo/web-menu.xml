@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-quemepongo" insertBefore="administration">
+        <item screen="quemepongo_Categoria.browse"/>
+        <item screen="quemepongo_Material.browse"/>
+        <item screen="quemepongo_TipoPrenda.browse"/>
+        <item screen="quemepongo_MaterialPorPrenda.browse"/>
+        <item screen="quemepongo_Guardarropa.browse"/>
+        <item screen="quemepongo_Prenda.browse"/>
+        <item screen="quemepongo_Evento.browse"/>
+    </menu>
+</menu-config>
