@@ -102,6 +102,7 @@ create table QUEMEPONGO_PRENDA (
     COLORPRIMARIO varchar(255) not null,
     COLOR2 varchar(255),
     GUARDARROPA_ID varchar(36) not null,
+    IMAGEN longvarbinary,
     --
     primary key (ID)
 )^

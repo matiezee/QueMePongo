@@ -18,9 +18,8 @@
         </collection>
         <collection id="materialsDc" class="com.company.quemepongo.entity.Material" view="_minimal">
             <loader id="materialsLc">
-                <query>
-                    <![CDATA[select e from quemepongo_Material e]]>
-                </query>
+                <query><![CDATA[select e from quemepongo_Material e
+]]></query>
             </loader>
         </collection>
     </data>
@@ -33,9 +32,9 @@
                 <checkBox id="disponibilidadField" property="disponibilidad"/>
                 <lookupField id="tipoDePrendasDcField" optionsContainer="tipoDePrendasDc" property="tipoDePrenda"/>
                 <lookupField id="materiallField" optionsContainer="materialsDc" property="material"/>
-                <textField id="colorPrimarioField" property="colorPrimario"/>
-                <textField id="colorSecundarioField" property="colorSecundario"/>
-                <groupBox/>
+                <colorPicker id="colorPrimarioPicker" property="colorPrimario" width="100px" required="true"/>
+                <colorPicker id="colorSecundarioPicker" property="colorSecundario" width="100px"/>
+                <upload property="imagen"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

@@ -45,11 +45,23 @@ public class Prenda extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "GUARDARROPA_ID")
     protected Guardarropa guardarropa;
+
     @JoinTable(name = "QUEMEPONGO_SUGERENCIA_PRENDA_LINK",
             joinColumns = @JoinColumn(name = "PRENDA_ID"),
             inverseJoinColumns = @JoinColumn(name = "SUGERENCIA_ID"))
     @ManyToMany
     protected List<Sugerencia> sugerencias;
+
+    @Column(name = "IMAGEN")
+    protected byte[] imagen;
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
 
     public List<Sugerencia> getSugerencias() {
         return sugerencias;

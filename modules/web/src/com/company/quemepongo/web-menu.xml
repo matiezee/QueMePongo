@@ -5,8 +5,11 @@
         <item screen="quemepongo_Material.browse"/>
         <item screen="quemepongo_TipoPrenda.browse"/>
         <item screen="quemepongo_MaterialPorPrenda.browse"/>
+    </menu>
+    <menu id="Guardarropas">
         <item screen="quemepongo_Guardarropa.browse"/>
-        <item screen="quemepongo_Prenda.browse"/>
+    </menu>
+    <menu id="Eventos">
         <item screen="quemepongo_Evento.browse"/>
     </menu>
 </menu-config>
