@@ -1,0 +1,5 @@
+@import "../QMP";
+
+@mixin com_haulmont_cuba {
+  @include QMP;
+}

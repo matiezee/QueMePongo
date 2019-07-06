@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd" class="com.company.quemepongo.web.ExtAppLoginWindow"
+        messagesPack="com.company.quemepongo.web" extends="/com/haulmont/cuba/web/app/loginwindow/loginwindow.xml">
+    <dialogMode height="600" width="800"/>
+    <layout>
+        <vbox id="loginWrapper">
+            <vbox id="loginMainBox" width="50%">
+                <hbox id="loginTitleBox" align="BOTTOM_CENTER" width="90%"/>
+                <vbox id="loginForm" align="TOP_CENTER" width="90%">
+                    <cssLayout id="loginCredentials" align="TOP_CENTER"/>
+                </vbox>
+            </vbox>
+        </vbox>
+    </layout>
+</window>

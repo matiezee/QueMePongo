@@ -1,0 +1,6 @@
+@import "QMP-defaults";
+@import "QMP";
+
+.QMP {
+  @include QMP;
+}
