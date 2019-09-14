@@ -5,7 +5,10 @@
     <layout>
         <vbox id="loginWrapper">
             <vbox id="loginMainBox" width="50%">
-                <hbox id="loginTitleBox" align="BOTTOM_CENTER" width="90%"/>
+                <hbox id="loginTitleBox" align="BOTTOM_CENTER" width="90%">
+                    <image id="logoImage" align="MIDDLE_CENTER"/>
+                    <label id="welcomeLabel" align="MIDDLE_CENTER"/>
+                </hbox>
                 <vbox id="loginForm" align="TOP_CENTER" width="90%">
                     <cssLayout id="loginCredentials" align="TOP_CENTER"/>
                 </vbox>
