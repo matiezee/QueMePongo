@@ -19,6 +19,9 @@
             <collection id="prendasDc" property="prendas"/>
             <collection id="sugerenciasDc" property="sugerencias"/>
         </instance>
+        <instance id="sugerenciaDc" class="com.company.quemepongo.entity.Sugerencia" view="sugerencia-view">
+            <loader id="sugerenciaDl"/>
+        </instance>
     </data>
     <actions>
         <action id="save" icon="icons/ok.png" caption="mainMsg://actions.Ok" shortcut="CTRL-ENTER"/>
@@ -93,20 +96,20 @@
                         </tab>
                         <tab id='sugerenciasTab' caption='msg://com.company.quemepongo.entity/Guardarropa.sugerencias'
                              margin='true,false,false,false'>
-                            <table id="sugerenciasTable" dataContainer="sugerenciasDc" width="100%" height="100%">
+                            <table id="sugerenciasTable" dataContainer="sugerenciasDc" width="100%" height="100%"
+                                   aggregatable="true">
                                 <actions>
                                     <action id="create" type="create"/>
+                                    <action id="add" caption="Generar" type="add"/>
                                     <action id="edit" type="edit"/>
                                     <action id="remove" type="remove"/>
                                 </actions>
                                 <columns>
                                     <column id="id"/>
-                                    <column id="prenda"/>
                                 </columns>
                                 <buttonsPanel>
-                                    <button action="sugerenciasTable.create"/>
-                                    <button action="sugerenciasTable.edit"/>
-                                    <button action="sugerenciasTable.remove"/>
+                                    <button id="generarSugerenciaButton" caption="Generar Sugerencia"
+                                            invoke="onGenerarSugerenciaButtonClick"/>
                                 </buttonsPanel>
                             </table>
                         </tab>

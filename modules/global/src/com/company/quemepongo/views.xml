@@ -9,7 +9,11 @@
         <property name="material" view="_minimal"/>
     </view>
     <view entity="quemepongo_Guardarropa" name="guardarropa-view" extends="_local">
-        <property name="prendas" view="prenda-view"/>
+        <property name="prendas" view="prenda-view">
+            <property name="tipoDePrenda" view="_minimal">
+                <property name="categoria" view="_minimal"/>
+            </property>
+        </property>
         <property name="sugerencias" view="_minimal">
             <property name="prenda" view="_minimal">
                 <property name="nombre"/>
