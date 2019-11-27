@@ -12,13 +12,20 @@
           <list>
             <SdkInfo>
               <option name="sdkType" value="ODPS_CMD" />
-              <option name="version" value="0.30.2-public" />
+              <option name="version" value="0.32.1-public" />
               <option name="installedLocation" value="C:\Users\Otros\.CubaStudio2018.3\config\plugins\odps-studio-intellij\odpscmd_public" />
               <option name="isDefault" value="true" />
             </SdkInfo>
           </list>
         </option>
       </SdkSettings>
+    </option>
+    <option name="webEngineSettings">
+      <WebEngineSettings>
+        <option name="nativePath" value="C:\Users\Otros\.CubaStudio2018.3\system\studio_cef_native" />
+        <option name="version" value="1.0.0" />
+        <option name="engineType" value="WEBVIEW" />
+      </WebEngineSettings>
     </option>
   </component>
 </application>
