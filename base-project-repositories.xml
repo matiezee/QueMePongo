@@ -1,0 +1,174 @@
+<application>
+  <component name="BaseProjectsState">
+    <option name="repositories">
+      <list>
+        <RepositoryState>
+          <option name="baseProjectGroups">
+            <list>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.1.2" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.1.1" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.1.0" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.1.0.BETA3" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.1.0.BETA2" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.1.0.BETA1" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.12" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.11" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.10" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.9" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.8" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.7" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.6" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.5" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.4" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.3" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.2" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.1" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.0" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.0.BETA4" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.0.BETA3" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="7.0.0.BETA1" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.15" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.14" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.13" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.12" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.11" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.10" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.9" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.8" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.7" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.6" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.5" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.4" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.3" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.2" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.1" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.0" />
+              </BaseProjectGroupState>
+              <BaseProjectGroupState>
+                <option name="name" value="platform" />
+                <option name="version" value="6.10.0.BETA1" />
+              </BaseProjectGroupState>
+            </list>
+          </option>
+          <option name="url" value="https://dl.bintray.com/cuba-platform/main" />
+          <option name="user" value="" />
+          <option name="password" value="/awcoVvWe18=" />
+          <option name="stateVersion" value="1" />
+        </RepositoryState>
+      </list>
+    </option>
+  </component>
+</application>
