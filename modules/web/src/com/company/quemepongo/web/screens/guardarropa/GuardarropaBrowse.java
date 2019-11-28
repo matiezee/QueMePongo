@@ -3,11 +3,13 @@ package com.company.quemepongo.web.screens.guardarropa;
 import com.company.quemepongo.entity.Guardarropa;
 import com.company.quemepongo.entity.Prenda;
 import com.company.quemepongo.entity.Sugerencia;
+import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.DataManager;
-import com.haulmont.cuba.gui.components.SuggestionField;
-import com.haulmont.cuba.gui.components.Table;
+import com.haulmont.cuba.gui.UiComponents;
+import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.model.CollectionPropertyContainer;
+import com.haulmont.cuba.gui.screen.LookupComponent;
 import com.haulmont.cuba.gui.screen.*;
 
 import javax.inject.Inject;
@@ -32,6 +34,43 @@ public class GuardarropaBrowse extends MasterDetailScreen<Guardarropa> {
     private Table<Sugerencia> sugerenciasTable;
     @Inject
     private SuggestionField suggestionField;
+    @Inject
+    protected UiComponents uiComponents;
+    @Inject
+    private Table<Prenda> prendasTable;
+
+    // Renderizado de img
+
+    @Subscribe
+    protected void onInit(InitEvent event) {
+        prendasTable.addGeneratedColumn(
+                "Image",
+                this::renderAvatarImageComponent
+        );
+    }
+
+    private Component renderAvatarImageComponent(Prenda prenda) {
+        FileDescriptor imageFile = prenda.getImagen();
+        if (imageFile == null) {
+            return null;
+        }
+        Image image = smallAvatarImage();
+        image.setSource(FileDescriptorResource.class)
+                .setFileDescriptor(imageFile);
+
+        return image;
+    }
+
+    private Image smallAvatarImage() {
+        Image image = uiComponents.create(Image.class);
+        image.setScaleMode(Image.ScaleMode.CONTAIN);
+        image.setHeight("40");
+        image.setWidth("40");
+        image.setStyleName("avatar-icon-small");
+        return image;
+    }
+
+    // SUGERENCIA
 
     public void onGenerarSugerenciaButtonClick() {
 

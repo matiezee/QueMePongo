@@ -1,5 +1,6 @@
 package com.company.quemepongo.entity;
 
+import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.Lookup;
 import com.haulmont.cuba.core.entity.annotation.LookupType;
@@ -52,15 +53,16 @@ public class Prenda extends StandardEntity {
     @ManyToMany
     protected List<Sugerencia> sugerencias;
 
-    @Column(name = "IMAGEN")
-    protected byte[] imagen;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "IMAGEN")
+    protected com.haulmont.cuba.core.entity.FileDescriptor imagen;
 
-    public byte[] getImagen() {
-        return imagen;
+    public void setImagen(FileDescriptor imagen) {
+        this.imagen = imagen;
     }
 
-    public void setImagen(byte[] imagen) {
-        this.imagen = imagen;
+    public FileDescriptor getImagen() {
+        return imagen;
     }
 
     public List<Sugerencia> getSugerencias() {

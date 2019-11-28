@@ -26,6 +26,7 @@
     <view entity="quemepongo_Prenda" name="prenda-view" extends="_local">
         <property name="tipoDePrenda" view="_minimal"/>
         <property name="material" view="_minimal"/>
+        <property name="imagen" view="_base"/>
     </view>
     <view entity="quemepongo_Sugerencia" name="sugerencia-view" extends="_local">
         <property name="prenda" view="prenda-view"/>

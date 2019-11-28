@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="sugerenciasTable"
+        messagesPack="com.company.quemepongo.web.sugerencia">
+    <data readOnly="true">
+        <collection id="sugerenciasDc"
+                    class="com.company.quemepongo.entity.Sugerencia"
+                    view="sugerencia-view">
+            <loader id="sugerenciasDl">
+                <query>
+                    <![CDATA[select e from quemepongo_Sugerencia e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="sugerenciasTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="sugerenciasTable"
+                dataLoader="sugerenciasDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="sugerenciasTable"
+                    width="100%"
+                    dataContainer="sugerenciasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="sugerenciasTable.create"/>
+                <button id="editBtn" action="sugerenciasTable.edit"/>
+                <button id="removeBtn" action="sugerenciasTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
