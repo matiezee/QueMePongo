@@ -5,6 +5,7 @@ import com.company.quemepongo.entity.Prenda;
 import com.company.quemepongo.entity.Sugerencia;
 import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.DataManager;
+import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.model.CollectionContainer;
@@ -38,6 +39,8 @@ public class GuardarropaBrowse extends MasterDetailScreen<Guardarropa> {
     protected UiComponents uiComponents;
     @Inject
     private Table<Prenda> prendasTable;
+    @Inject
+    private Notifications notifications;
 
     // Renderizado de img
 
@@ -80,6 +83,7 @@ public class GuardarropaBrowse extends MasterDetailScreen<Guardarropa> {
         List<Prenda> torsos = new ArrayList<>();
         List<Prenda> piernas = new ArrayList<>();
         List<Prenda> calzados = new ArrayList<>();
+        List<Prenda> abrigos = new ArrayList<>();
         List<Prenda> accesorios = new ArrayList<>();
         List<Prenda> lista_prendas = new ArrayList<>();
 
@@ -101,6 +105,9 @@ public class GuardarropaBrowse extends MasterDetailScreen<Guardarropa> {
                 case "Accesorio":
                     accesorios.add(p_aux);
                     break;
+                case "Abrigo":
+                    abrigos.add(p_aux);
+                    break;
                 default:
                     System.out.println("no match");
             }
@@ -111,6 +118,9 @@ public class GuardarropaBrowse extends MasterDetailScreen<Guardarropa> {
         lista_prendas.add(this.obtenerPrendaRandom(calzados));
         if (this.randomBoolean() == true) {
             lista_prendas.add(this.obtenerPrendaRandom(accesorios));
+        }
+        if (this.randomBoolean() == true) {
+            lista_prendas.add(this.obtenerPrendaRandom(abrigos));
         }
 
         // Crear la instancia
@@ -130,7 +140,7 @@ public class GuardarropaBrowse extends MasterDetailScreen<Guardarropa> {
             suggestionField.setValue("Sugerencia realizada con exito, por favor refrescar la pagina. " +
                     "Sugerencia ID: " + s1.getId());
             suggestionField.setContextHelpText("Atencion");
-
+            notifications.create().withCaption("Sugerencia Creada!").show();
         } catch (Exception e) {
             // Borramos el objeto by id ya que no se guardo bien o algo paso.
             dataManager.remove(dataManager.getReference(Sugerencia.class, s1.getId()));

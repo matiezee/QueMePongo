@@ -27,7 +27,7 @@
             </column>
         </form>
         <hbox id="editActions" spacing="true">
-            <button action="windowCommitAndClose"/>
+            <button id="windowCommitAndCloseButton" action="windowCommitAndClose"/>
             <button action="windowClose"/>
         </hbox>
     </layout>
