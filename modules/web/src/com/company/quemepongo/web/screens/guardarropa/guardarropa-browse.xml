@@ -19,9 +19,6 @@
             <collection id="prendasDc" property="prendas"/>
             <collection id="sugerenciasDc" property="sugerencias"/>
         </instance>
-        <instance id="sugerenciaDc" class="com.company.quemepongo.entity.Sugerencia" view="sugerencia-view">
-            <loader id="sugerenciaDl"/>
-        </instance>
     </data>
     <actions>
         <action id="save" icon="icons/ok.png" caption="mainMsg://actions.Ok" shortcut="CTRL-ENTER"/>
@@ -106,12 +103,16 @@
                                 </actions>
                                 <columns>
                                     <column id="id"/>
+                                    <column id="prenda"/>
                                 </columns>
                                 <buttonsPanel>
                                     <button id="generarSugerenciaButton" caption="Generar Sugerencia"
                                             invoke="onGenerarSugerenciaButtonClick"/>
+                                    <button id="editButton" action="sugerenciasTable.edit"/>
+                                    <button id="removeButton" action="sugerenciasTable.remove"/>
                                 </buttonsPanel>
                             </table>
+                            <suggestionField id="suggestionField" width="100%"/>
                         </tab>
                     </tabSheet>
                 </vbox>

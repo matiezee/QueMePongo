@@ -34,7 +34,11 @@
                 <lookupField id="materiallField" optionsContainer="materialsDc" property="material"/>
                 <colorPicker id="colorPrimarioPicker" property="colorPrimario" width="100px" required="true"/>
                 <colorPicker id="colorSecundarioPicker" property="colorSecundario" width="100px"/>
-                <upload property="imagen"/>
+                <upload id="imageField"
+                        property="imagen"
+                        fileStoragePutMode="IMMEDIATE"
+                        showFileName="true"
+                />
             </column>
         </form>
         <hbox id="editActions" spacing="true">

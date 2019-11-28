@@ -26,6 +26,7 @@
     <view entity="quemepongo_Prenda" name="prenda-view" extends="_local">
         <property name="tipoDePrenda" view="_minimal"/>
         <property name="material" view="_minimal"/>
+        <property name="imagen" view="_base"/>
     </view>
     <view entity="quemepongo_Sugerencia" name="sugerencia-view" extends="_local">
         <property name="prenda" view="prenda-view"/>
@@ -40,5 +41,22 @@
                 </property>
             </property>
         </property>
+    </view>
+    <view entity="quemepongo_Sugerencia" name="sugerencia-browser" extends="_local">
+        <property name="prenda" view="_minimal">
+            <property name="nombre"/>
+            <property name="tipoDePrenda" view="_minimal">
+                <property name="temperatura"/>
+                <property name="lluvia"/>
+                <property name="viento"/>
+                <property name="sol"/>
+                <property name="categoria" view="_minimal"/>
+            </property>
+            <property name="material" view="_minimal"/>
+            <property name="colorPrimario"/>
+            <property name="colorSecundario"/>
+            <property name="imagen"/>
+        </property>
+        <property name="guardarropa" view="_minimal"/>
     </view>
 </views>
