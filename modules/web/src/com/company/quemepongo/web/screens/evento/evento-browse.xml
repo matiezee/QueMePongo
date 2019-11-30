@@ -42,6 +42,8 @@
                 <button id="createBtn" action="eventoesTable.create"/>
                 <button id="editBtn" action="eventoesTable.edit"/>
                 <button id="removeBtn" action="eventoesTable.remove"/>
+                <button id="sugerenciaButton" caption="Obtener Sugerencia" invoke="onSugerenciaButtonClick"/>
+                <button id="climaButton" caption="Clima" invoke="onClimaButtonClick"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
